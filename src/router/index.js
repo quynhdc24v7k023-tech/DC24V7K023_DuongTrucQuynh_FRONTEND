@@ -47,16 +47,14 @@ const router = createRouter({
   routes,
 });
 
-// Navigation guard for authentication
 router.beforeEach((to, from, next) => {
   const requiresAuth = to.meta.requiresAuth;
   const isAuthenticated = AuthService.isAuthenticated();
 
   if (requiresAuth && !isAuthenticated) {
-    // Redirect to login if trying to access protected route without authentication
     next({ name: "login" });
   } else if (to.name === "login" && isAuthenticated) {
-    // Redirect to home if trying to access login while already authenticated
+
     next({ name: "contactbook" });
   } else {
     next();
