@@ -177,7 +177,6 @@ class AuthService {
       this.notifyAuthStateListeners(null);
       return { success: true };
     }
-
     try {
       await firebaseSignOut(auth);
       this.currentUser = null;
