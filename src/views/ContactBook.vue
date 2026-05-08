@@ -73,17 +73,14 @@ export default {
     },
   },
   computed: {
-    contactStrings() {
-      return this.contacts.map((contact) => {
-        const { name, email, address, phone } = contact;
-        return [name, email, address, phone].join("");
-      });
-    },
     filteredContacts() {
       if (!this.searchText) return this.contacts;
-      return this.contacts.filter((_contact, index) =>
-        this.contactStrings[index].includes(this.searchText),
-      );
+      const search = this.searchText.toLowerCase();
+      return this.contacts.filter((contact) => {
+        const { name, email, address, phone } = contact;
+        const searchable = [name, email, address, phone].join("").toLowerCase();
+        return searchable.includes(search);
+      });
     },
     activeContact() {
       if (this.activeIndex < 0) return null;

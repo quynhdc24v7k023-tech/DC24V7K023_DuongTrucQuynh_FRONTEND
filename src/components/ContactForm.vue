@@ -60,6 +60,62 @@
         <strong>Liên hệ yêu thích</strong>
       </label>
     </div>
+
+    <div class="form-group">
+      <label><strong>Sở thích:</strong></label>
+      <div class="interests-container">
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="sport"
+            value="Thể thao"
+            v-model="contactLocal.interests"
+          />
+          <label class="form-check-label" for="sport">Thể thao</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="game"
+            value="Chơi game"
+            v-model="contactLocal.interests"
+          />
+          <label class="form-check-label" for="game">Chơi game</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="book"
+            value="Đọc sách"
+            v-model="contactLocal.interests"
+          />
+          <label class="form-check-label" for="book">Đọc sách</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="movie"
+            value="Xem phim"
+            v-model="contactLocal.interests"
+          />
+          <label class="form-check-label" for="movie">Xem phim</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="music"
+            value="Nghe nhạc"
+            v-model="contactLocal.interests"
+          />
+          <label class="form-check-label" for="music">Nghe nhạc</label>
+        </div>
+      </div>
+    </div>
     <div class="form-group">
       <button class="btn btn-primary">Lưu</button>
       <button
@@ -110,13 +166,19 @@ export default {
     });
     return {
       // Tạo bản sao cục bộ để không sửa trực tiếp props
-      contactLocal: { ...this.contact },
+      contactLocal: {
+        interests: [], // Khởi tạo mặc định
+        ...this.contact,
+      },
       contactFormSchema,
     };
   },
   watch: {
     contact(newContact) {
-      this.contactLocal = { ...newContact };
+      this.contactLocal = {
+        interests: [],
+        ...newContact,
+      };
     },
   },
   methods: {
