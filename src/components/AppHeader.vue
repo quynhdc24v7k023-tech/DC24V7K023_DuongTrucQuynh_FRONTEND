@@ -35,7 +35,6 @@ export default {
     };
   },
   mounted() {
-
     this.unsubscribe = AuthService.onAuthStateChange((user) => {
       this.isAuthenticated = AuthService.isAuthenticated();
     });

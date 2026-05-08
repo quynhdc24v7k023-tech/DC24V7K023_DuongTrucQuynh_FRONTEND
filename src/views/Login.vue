@@ -9,7 +9,7 @@
         <p class="text-subtitle">Vui lòng đăng nhập để tiếp tục</p>
       </div>
 
-      <!-- Form chính -->
+
       <form @submit.prevent="signInWithEmail" class="mt-4">
         <div class="input-group-custom">
           <i class="fas fa-envelope"></i>

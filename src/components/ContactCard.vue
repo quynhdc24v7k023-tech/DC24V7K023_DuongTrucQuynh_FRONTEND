@@ -5,6 +5,7 @@
         },
     };
 </script>
+
 <template>
     <div>
         <div class="p-1">

@@ -265,5 +265,5 @@ export default {
   .register-card {
     padding: 30px 20px;
   }
-}
+}   
 </style>

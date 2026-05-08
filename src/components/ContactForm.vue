@@ -38,14 +38,12 @@
     </div>
     <div class="form-group">
       <label for="phone">Điện thoại</label>
-
       <Field
         name="phone"
         type="tel"
         class="form-control"
         v-model="contactLocal.phone"
       />
-
       <ErrorMessage name="phone" class="error-feedback" />
     </div>
     <div class="form-group form-check">

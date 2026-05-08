@@ -7,9 +7,7 @@ import AuthService from "./services/auth.service.js";
 
 const app = createApp(App);
 
-// Initialize Auth state listener before mounting
 AuthService.onAuthStateChange((user) => {
-  // This will trigger route guards when auth state changes
   console.log("Auth state changed:", user ? "logged in" : "logged out");
 });
 
